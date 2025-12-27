@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Foundation of IT/3- Network protocols and communication.md",
+                "file": "Foundation of IT/4- Packet tracer LAB.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3- Network protocols and communication"
+              "title": "4- Packet tracer LAB"
             }
           }
         ]
@@ -180,13 +180,15 @@
       "bases:Create new base": false
     }
   },
-  "active": "83f78d8146c5c7a2",
+  "active": "33b20a9f03e15546",
   "lastOpenFiles": [
+    "Foundation of IT/3- Network protocols and communication.md",
+    "Foundation of IT/4- Packet tracer LAB.md",
+    "Foundation of IT/4- Packet tracer lab",
     "zzfiles/Pasted image 20251226141700.png",
     "zzfiles/Pasted image 20251226140834.png",
     "zzfiles/Pasted image 20251226140723.png",
     "Foundation of IT/2- networking Basics.md",
-    "Foundation of IT/3- Network protocols and communication.md",
     "Foundation of IT/1- Intro to operating systems and virtualization.md",
     "zzfiles/Pasted image 20251226132930.png",
     "zzfiles/Pasted image 20251226132020.png",
@@ -200,7 +202,6 @@
     "project 1/files",
     "project 1/files/Pasted image 20251206200554.png",
     "project 1/files/Pasted image 20251206133639.png",
-    "project 1/files/Pasted image 20251206132642.png",
     "project 1",
     "Welcome.md"
   ]
