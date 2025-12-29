@@ -62,4 +62,32 @@ To configure a DNS server pointing to a http server hosting a web page:
 1. Configure the necessities `ip addresses, routers, ect`
 2. configure the RIPv2 or any other routing protocol between the routers
 3. Give the DNS server the address of the http server, the computers the address of the DNS server.
+# Configure IP addresses
 
+| **Command**               | **Purpose**                                           |
+| ------------------------- | ----------------------------------------------------- |
+| `enable`                  | Switches to Privileged EXEC mode.                     |
+| `config t`                | Short for `configure terminal`; enters global config. |
+| `interface <name>`        | Accesses a specific port (e.g., `fa0/0`, `g0/1`).     |
+| `ip address <ip> <mask>`  | Sets the static IP and subnet mask.                   |
+| `no shutdown`             | "Wakes up" the interface (changes status to UP).      |
+| `show ip interface brief` | **Verification:** Shows all ports and their status.   |
+# configure `IGRP` routing
+```
+Router>enable
+Router#configure terminal
+Router(config)#router eigrp [AS_number] // choose a same number netween all routers 0 - 65535
+Router(config-router)#network [network-address] [wildcard-mask (255... - 255.)] 
+Router(config-router)#no auto-summary
+Router(config-router)#passive-interface [interface-name]
+Router(config-router)#exit
+Router(config)#exit
+Router#copy running-config startup-config
+```
+
+- `show ip eigrp neighbors`: Displays a list of all EIGRP neighbors the router has discovered.
+- `show ip route eigrp`: Shows only the routes learned via EIGRP in the routing table (indicated by the letter "D").
+- `show ip eigrp topology`: Displays the EIGRP topology table, including all learned routes and potential backup routes.
+- `show ip protocols`: Provides an overview of all active routing protocols and their parameters.
+- **Test connectivity:** Use the `ping` command from one end device to another across different networks to verify full end-to-end connectivity.
+- `show ip eigrp interfaces`

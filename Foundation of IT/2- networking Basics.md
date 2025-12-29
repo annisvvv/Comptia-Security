@@ -75,7 +75,6 @@ Default (natural) subnet masks:
 ## Exercise
 We have an initial address of 10.0.0.0/8 `the /8 means that thers is 8bits that are part of the net ID so 8 - 32 bits usable by the host`
 we can write it in binary `0b0000_01010.0000_0000.0000_0000.0000_0000`
-
 ### 10
 we want to sub-net this address into an address for only 10 hosts.
 so first we have to do the `log2(10 hosts) = 3`. so we take it 4, that mean that the 10 hosts take 4 bits of the address. thus 32 - 4 = 28, our new network for these 10 devices are 10.0.0.0/28 so in binary `0b1111_1111.0000_0000.00000_0000.0000____00010` the `____` make the delimitation between the host and network id.
