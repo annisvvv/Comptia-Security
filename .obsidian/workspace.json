@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Foundation of IT/Network scanning and Traffic analysis/1- nmap.md",
+                "file": "Foundation of IT/4- Network scanning and traffic analysis.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1- nmap"
+              "title": "4- Network scanning and traffic analysis"
             }
           }
         ]
@@ -180,8 +180,12 @@
       "bases:Create new base": false
     }
   },
-  "active": "83f78d8146c5c7a2",
+  "active": "33b20a9f03e15546",
   "lastOpenFiles": [
+    "Foundation of IT/2- Networking Basics.md",
+    "Foundation of IT/4- Network scanning and traffic analysis.md",
+    "Foundation of IT/3- Network protocols and communication.md",
+    "Foundation of IT/Network scanning and Traffic analysis/1- nmap.md",
     "zzfiles/Pasted image 20251229081958.png",
     "zzfiles/Pasted image 20251229081924.png",
     "zzfiles/Pasted image 20251229081909.png",
@@ -189,11 +193,8 @@
     "Foundation of IT/Packet tracer lab/Packet tracer LAB.md",
     "Foundation of IT/aaainfo",
     "Foundation of IT/Note.md",
-    "Foundation of IT/Network scanning and Traffic analysis/1- nmap.md",
     "Foundation of IT/Network scanning and Traffic analysis",
     "Foundation of IT/4-.md",
-    "Foundation of IT/2- networking Basics.md",
-    "Foundation of IT/3- Network protocols and communication.md",
     "zzfiles/lab1.pkt",
     "Foundation of IT/Packet tracer lab/lab1.pkt",
     "Foundation of IT/Packet tracer lab",
@@ -209,7 +210,6 @@
     "zzfiles/Pasted image 20251226131844.png",
     "zzfiles/Pasted image 20251226072653.png",
     "zzfiles",
-    "zzfiles/Pasted image 20251226072527.png",
     "project 1/Reverse engineering (Software RE).md",
     "Foundation of IT",
     "Welcome.md"

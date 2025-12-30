@@ -132,4 +132,55 @@ If the public IP pool is exhausted (in dynamic NAT configurations), NAT cannot a
 
 Why Port Numbers Are Also Translated
 Imagine two internal hosts (A and B) sending traffic to the same external server using the same port number, say 1000. If NAT only translated the IP addresses and not the ports, both sets of packets would appear identical once they reach the destination — making it impossible for NAT to know which reply is for which device. To prevent this, NAT also changes the source port numbers and records these changes in its NAT table. This process ensures that return traffic is directed to the correct internal host.allows multiple private IP addresses to share a single public IP by using different port numbers. This is the most widely used NAT type today, as it enables thousands of devices to access the internet through just one public IP.
-# ICMP and ARP
+# `ICMP` and `ARP`
+### `ARP` address resolution protocol
+Since network communication at the data link layer requires MAC addresses, but most routing decisions are based on IP addresses, a mechanism is needed to translate between the two. This is where the **ARP protocol (Address Resolution Protocol)** comes into play.
+
+**ARP is responsible for mapping IP addresses to MAC addresses.** When a device wants to send data to another device on the same local network, it uses ARP to find the MAC address corresponding to the target IP address.
+
+Here’s a simplified explanation of how ARP works:
+
+1. **Check the ARP Cache**  
+    The sending device first checks its ARP cache — a local memory storing recent IP-to-MAC address mappings.
+    - If the MAC address for the target IP is already cached, it uses it immediately.
+    - If not, the device sends an ARP Request to the entire network.  
+
+2. **ARP Request Broadcast**  
+    The ARP request is sent as a **broadcast**, meaning all devices on the subnet receive it. The message asks, "Who has this IP address?" Only the device with the matching IP will respond with its MAC address.  
+
+3. **ARP Reply**  
+    The destination device replies with its MAC address, and the sender updates its ARP cache and proceeds with data transmission.
+### `ICMP` internet control message protocol
+ICMP (Internet Control Message Protocol) is used for ping because it's designed for network diagnostics, allowing devices to send lightweight "echo requests" to check reachability, measure round-trip time (latency), and detect packet loss, acting as a simple, universal way to verify if a host is alive and how well it's responding on an IP network. It provides fundamental feedback for troubleshooting, making it ideal for the simple "is it there and how fast?" job of ping. 
+
+Key Reasons for Using ICMP for Ping:
+- **Connectivity Testing:** Ping sends an ICMP Echo Request to a target; if reachable, the target sends back an ICMP Echo Reply, confirming basic communication.
+- **Latency Measurement:** By timing how long the Echo Reply takes to return (Round-Trip Time or RTT), you measure network delay, indicating connection speed.
+- **Packet Loss Detection:** If replies don't cocontrolme back, it signals packet loss, pointing to network congestion or issues.
+- **Simplicity & Efficiency:** ICMP is a lightweight protocol, requiring minimal resources, making it fast and efficient for quick checks.
+- **Universal Compatibility:** Most network devices support ICMP, allowing you to test across different types of hardware.
+- **Diagnostic Foundation:** It's a core diagnostic tool, forming the basis for other utilities like `traceroute`, which map the entire path by using ICMP Time Exceeded messages. 
+
+In essence, ping leverages ICMP's error reporting and operational messaging capabilities to provide essential real-time insights into network health and performance.
+# `DHCP` and `DNS`
+### `DHCP` dynamic host configuration protocol
+`DHCP` is used to automatically assign IP addresses and other essential network configuration settings—such as the subnet mask, default gateway, and DNS server—to devices on a network. It simplifies network management and eliminates the need for manual configuration on each device.
+
+When a device, such as a smartphone or computer, connects to a network, it initiates a process to obtain an IP address from a **DHCP server**. This process involves a four-step message exchange between the client and the server also called "DORA" :
+
+1. **DHCP Discover** – The client broadcasts a request to locate any available DHCP server.
+2. **DHCP Offer** – A DHCP server responds with an offer containing an available IP address and configuration information.
+3. **DHCP Request** – The client sends a request to the server to accept the offered IP address.
+4. **DHCP Acknowledgment (ACK)** – The server confirms that the IP address has been assigned to the client.
+
+This process allows a device to join the network with the necessary configuration, without user intervention.
+### `DNS` domain name system
+`DNS` translates human-readable domain names (like www.example.com) into machine-readable IP addresses (like 210.38.33.7).
+
+Here’s how the DNS resolution process works:
+
+1. The browser contacts the **Local DNS Server (LDNS)** and asks for the IP address of the domain.  
+2. If the LDNS doesn’t have the information cached, it forwards the request to a **root DNS server**, which points it to the appropriate **Top-Level Domain (TLD) server** (e.g., .com).  
+3. The TLD server responds with a **Name Server (NS) record** for the requested domain.  
+4. The LDNS then contacts the authoritative DNS server and requests an **A record**, which contains the actual IP address.  
+5. Once received, the LDNS returns the IP address to the browser and caches the response for future queries.

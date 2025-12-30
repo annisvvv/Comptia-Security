@@ -78,7 +78,7 @@ To run a specific script we use the `--script=<scriptname,....>` Some scripts re
 example: `nmap -p 80 --script http-put --script-args http-put.url='/dav/shell.php',http-put.file='./shell.php'` 
 
 A full list of scripts and their corresponding arguments (along with example use cases) can be found [here](https://nmap.org/nsedoc/).
-##### Using script menu
+##### Using script menuhttps://student.learn.gomycode.co/
 Nmap scripts come with built-in help menus, which can be accessed using `nmap --script-help <script-name>`. This tends not to be as extensive as in the link given above, however, it can still be useful when working locally.
 #### Searching for scripts
 you can search for scipts either in the nmap website or locally.
@@ -96,3 +96,19 @@ The same techniques can also be used to search for categories of script. For exa
 #### Installing new scripts
 We mentioned previously that the Nmap website contains a list of scripts, so, what happens if one of these is missing in the `scripts` directory locally? A standard `sudo apt update && sudo apt install nmap` should fix this; however, it's also possible to install the scripts manually by downloading the script from Nmap (`sudo wget -O /usr/share/nmap/scripts/<script-name>.nse https://svn.nmap.org/nmap/scripts/<script-name>.nse`). This must then be followed up with `nmap --script-updatedb`, which updates the `script.db` file to contain the newly downloaded script.
 #### Firewall evasion
+Some of the technique we have seen are `stealth scans, along with NULL, FIN and Xmas scans`.
+
+typically windows config block the `ICMP` ping packet and nmap rely on then to determine if a host is up or not however the `-Pn` switch work in a way where nmap thinks that every device is up and skips the ping.
+
+This means that Nmap will always treat the target host(s) as being alive, effectively bypassing the ICMP block; however, it comes at the price of potentially taking a very long time to complete the scan (if the host really is dead then Nmap will still be checking and double checking every specified port).
+
+It's worth noting that if you're already directly on the local network, Nmap can also use ARP requests to determine host activity.
+
+There are a variety of other switches which Nmap considers useful for firewall evasion. We will not go through these in detail, however, they can be found [here](https://nmap.org/book/man-bypass-firewalls-ids.html).
+
+The following switches are of particular note:
+
+- `-f`:- Used to fragment the packets (i.e. split them into smaller pieces) making it less likely that the packets will be detected by a firewall or IDS.
+- An alternative to `-f`, but providing more control over the size of the packets: `--mtu <number>`, accepts a maximum transmission unit size to use for the packets sent. This _must_ be a multiple of 8.
+- `--scan-delay <time>ms`:- used to add a delay between packets sent. This is very useful if the network is unstable, but also for evading any time-based firewall/IDS triggers which may be in place.
+- `--badsum`:- this is used to generate in invalid checksum for packets. Any real TCP/IP stack would drop this packet, however, firewalls may potentially respond automatically, without bothering to check the checksum of the packet. As such, this switch can be used to determine the presence of a firewall/IDS.
