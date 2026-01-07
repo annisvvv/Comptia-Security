@@ -1,7 +1,7 @@
 ### Some switches and settings
 - `-sS` syn scan
 - `-sU` `UDP`scan
-- `-O` Operating system detection
+- `-O` `-A` Operating system detection / full OS version discovery
 - `-sV` version detection
 - `-v` , `-vv` increase verbosity level 1 and 2
 - `-oA` , `-oN` , `-oG` save result in thee major format, normal format, `grepable` format
