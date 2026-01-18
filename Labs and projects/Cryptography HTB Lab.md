@@ -9,17 +9,17 @@ Since cryptography is used widely nowadays by applications, networks etc, and pl
 # Lab resolution
 Since task 1 is just an introduction i will begin from task 2 of the Lab.
 ## Task 2 : Types of cryptography
-Since sending messages (packets) over the internet in plain text is **insecure** if the network is monitored so a mechanism like **encryption** comes into place. Encryption is divided into two type:
+Since sending messages (packets) over the internet in plain text is **insecure** if the network is monitored, a mechanism like **encryption** comes into place. Encryption is divided into two type:
 - **Symmetric**
 - **Asymmetric**
 
 lets take a look at the specification of each:
 
-|             | Symmetric                                                                                                                                                                                                                                      | Asymmetric                                                                                                                                                                                                                                         |
-| ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| definition  | In Symmetric encryption the same encryption key is used for encryption and decryption. This poses a major security problem that is **key distribution**, in order for the two parties to get the same key one has to send his key t the other. | in Asymmetric encryption two separate key are used for encryption and decryption one called **public key** and the other **private key** respectively, this way the public keys can get shared across network without any problem.                 |
-| Security    | Symmetric encryption are not that secure since keys had to be shared over networks exposing it to potential threat.                                                                                                                            | Asymmetric encryption are more secure due to the fact that the private key never needs to be shared or transmitted over the network it remains exclusively on the owner's machine. However the public key can be shared but only can encrypt data. |
-| Performance | symmetric encryption is generally preferred for large data transfers because it is significantly faster and requires less computational overhead. symmetric algorithms use fast, low-level operations.                                         | asymmetric encryption is significantly slower and more computationally intensive because it relies on complex mathematical problems.                                                                                                               |
+|                 | Symmetric                                                                                                                                                                                                                                      | Asymmetric                                                                                                                                                                                                                                             |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| **definition**  | In Symmetric encryption the same encryption key is used for encryption and decryption. This poses a major security problem that is **key distribution**, in order for the two parties to get the same key one has to send his key t the other. | in Asymmetric encryption two separate key are used for encryption and decryption one called **public key** and the other **private key** respectively, this way the public keys can get shared across network without any problem.                     |
+| **Security**    | Symmetric encryption are not that secure since keys had to be shared over networks exposing it to potential threat.                                                                                                                            | Asymmetric encryption are more secure due to the fact that the private key never needs to be shared or transmitted over the network **it remains exclusively on the owner's machine**. However the public key can be shared but only can encrypt data. |
+| **Performance** | symmetric encryption is generally preferred for large data transfers because it is significantly **faster** and requires less computational overhead. symmetric algorithms use fast, low-level operations.                                     | asymmetric encryption is significantly **slower** and more computationally intensive because it relies on complex mathematical problems.                                                                                                               |
 #### Questions answers :
 
 1. What type of cryptography is more secure?
@@ -60,3 +60,42 @@ f762d32e3c160900d94b683e927555b9  - # this is our hash
 3. Who created `MD5`?
 	`MD5` was created by cryptographer ***`Ronald Rivest`*** in 1991
 # Task 4 : Decoding/encoding
+there is a difference between encoding and encrypting, encrypting is done using a key and is meant to be visible to anyone in possession of the key. However encoding is a way to represent data.
+#### Questions answers :
+
+1. Encode the string `"cryptographyisuseful"` with `Base64`
+	Online tools like [CypherChef](https://gchq.github.io/CyberChef/) can be used, in my case i will use my Terminal using the command `echo -n "string to encode" | base64`
+```
+anis@ThinkPad-X13:~$ echo -n "cryptographyisuseful" | base64
+Y3J5cHRvZ3JhcGh5aXN1c2VmdWw=
+```
+
+1. Decode the string `"dGhlIHNlY3JldCB3b3JkIGlzIDogd2F0ZXJtZWxvbg=="`. What's the secret word?
+	same as encoding however i will use the `-d` switch that stands for decode `echo -n "base 64 encoded" | base64 -d`
+```
+anis@ThinkPad-X13:~$ echo -n "dGhlIHNlY3JldCB3b3JkIGlzIDogd2F0ZXJtZWxvbg==" | base64 -d
+the secret word is : watermelon
+```
+
+---
+# Takeaway
+### 1.Encryption
+encryption is divided into two:
+
+| **Feature**       | **Symmetric**                                         | **Asymmetric**                   |
+| ----------------- | ----------------------------------------------------- | -------------------------------- |
+| **Key Count**     | One (Shared)                                          | Two (Public & Private)           |
+| **Speed**         | Fast (Low overhead)                                   | Slow (Complex math)              |
+| **Con**           | **Key Distribution:** How do you send the key safely? | **Complexity:** High CPU usage.  |
+| **Best Use Case** | Bulk data (Hard drives, file transfers).              | Initial handshakes (HTTPS, SSH). |
+### 2. Hashing
+
+Hashing is a **one-way**. Unlike encryption, you aren't meant to "decrypt" a hash.
+- **Purpose:** Integrity (Checking if a file changed) and Password Security.
+- **Key Concept:** Even a tiny change in the input (like adding a space) creates a completely different hash—this is known as the **Avalanche Effect**.
+### 3. Encoding vs. Encryption
+
+This is a common point of confusion.
+- **Encryption:** Protects the **secrecy** of data (requires a key).
+- **Encoding:** Protects the **usability** of data.
+- **Use Case:** `Base64` is used to send binary data (like images) over protocols designed for text (like HTML/Email).
