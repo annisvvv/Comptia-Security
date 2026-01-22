@@ -31,3 +31,28 @@ Changes to systems can trigger technical side effects that, if not managed prope
 | Legacy Applications | **Legacy applications** are older systems that may lack modern security features, updates, or vendor support.<br><br>sometimes businesses need them so you may take into ways to upgrade to new software or continue using this software in a VM to not disturb the buisness | They often:<br><br>- Use outdated encryption or protocols<br>- Have unpatched vulnerabilities<br>- Don’t integrate well with newer infrastructure  <br>      <br>Changes involving legacy systems must be handled with extra caution, including:<br><br>- Isolating the legacy system<br>- Adding compensating controls<br>- Planning for eventual replacement |
 | Dependencies        | Modern systems are interconnected. A single service may rely on **multiple other components** to function properly.                                                                                                                                                          | **Example:**  <br>The **IP Helper** service in Windows relies on several other services. If just one of them fails, IP Helper won’t start, potentially affecting VPNs or other connectivity.<br><br>That’s why a technical change should always include a **dependency check** to avoid cascading failures.                                                    |
 # Documentation
+When it comes to security and system stability, **clear documentation is not optional — it’s essential**. Without it, teams may not know what changed, who made the change, or why it happened — all of which can lead to confusion, misconfigurations, or even open the door to security incidents.
+
+Well-maintained documentation creates a **record of accountability**, improves communication between teams, and simplifies troubleshooting or audits. It also supports continuity: if team members change, the documentation stays.
+
+| Best practices are               |                                                                                                                                                                                                                                                                                                                                                                      |                                                                                                                                                                                                                                                               |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Updating Diagrams<br>            | Visual documentation such as **network diagrams**, **infrastructure layouts**, **and system architecture maps** should always reflect the current environment.<br><br>Keeping these visuals accurate ensures everyone has a **clear and current view** of what systems exist, how they interact, and where risks might lie.                                          | When diagrams are outdated:<br><br>- Security teams might overlook new assets or connections<br>- Misconfigurations are more likely<br>- Incident response becomes slower and less effective                                                                  |
+| Updating Policies and Procedures | When systems change, **policies and procedures must be updated accordingly**. Otherwise, employees may follow outdated instructions, which can result in security gaps, operational errors, or non-compliance with legal standards.<br><br>Regular reviews of your policies help ensure that the organization stays aligned with current systems and best practices. | For example:<br><br>- If a new firewall rule is added but not documented in the policy, future audits may flag the discrepancy.<br>- If a procedure for handling sensitive data isn’t updated to match a new encryption tool, staff may use the wrong method. |
+# Version control
+In any environment where files, configurations, or code are regularly updated, **version control** plays a critical role in maintaining both **security and stability.**
+
+Without version control, it’s difficult to:
+
+- Identify what changed and when
+- Know who made a change (and why)
+- Restore previous configurations if something breaks
+#### **Why Version Control Matters for Security**
+
+Version control helps prevent **unauthorized or untracked changes**. These types of changes can introduce vulnerabilities or break key functionality, and without version tracking, troubleshooting becomes significantly harder.
+
+With proper versioning:
+
+- Every change has a **timestamp and author**
+- Reverting to a **known-good state** is quick and easy
+- There’s a **clear audit trail** for compliance and security reviews
