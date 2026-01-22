@@ -16,11 +16,11 @@ Network are the back bone of every device connections in other term the internet
 | Congestion           | Low                     | Medium                      | High                                |
 | Typical Use          | Homes, schools, offices | Cities, university campuses | Multinational companies, ISPs       |
 
-![[Pasted image 20251226072527.png]]
+![Pasted image 20251226072527](../zzfiles/Pasted%20image%2020251226072527.png)
 # The `OSI` model
 The **OSI (Open Systems Interconnection)** model is a conceptual framework used to understand and troubleshoot network communications. It breaks the communication process into **seven layers**, each responsible for a specific task.
 
-![[Pasted image 20251226072653.png]]
+![Pasted image 20251226072653](../zzfiles/Pasted%20image%2020251226072653.png)
 ### Why the OSI Model Matters:  
 Even though modern networks often use the simpler TCP/IP model, OSI helps in diagnosing problems and designing network systems by breaking down the communication steps into clear, understandable layers.
 # IP address fundamentals
@@ -32,7 +32,7 @@ An **IP address** is a unique identifier assigned to each device on a network. I
 
 An IP v4 address is a set of 4 octe that is 8 bits for 1 octe so 32bits. it can be written 0b0000_0000.0000_0000.0000_0000.0000_0000 in binary
 
-![[Pasted image 20251226131844.png]]
+![Pasted image 20251226131844](../zzfiles/Pasted%20image%2020251226131844.png)
 
 ### **What is Subnetting?**
 
@@ -58,7 +58,7 @@ IP addresses can subdivide into groups each has a max number of possible hosts.
 |C|192.0.1.1 to 223.255.254.254|Small networks|
 |D|224.0.0.0 to 239.255.255.255|Multicasting|
 |E|240.0.0.0 to 255.255.255.254|Research and experimental|
-![[Pasted image 20251226132020.png]]
+![Pasted image 20251226132020](../zzfiles/Pasted%20image%2020251226132020.png)
 ## Network masking (classless)
 this is the best way to subnet an ip address as it gives more flexibility.
 
@@ -70,7 +70,7 @@ Default (natural) subnet masks:
 |A|255.0.0.0|
 |B|255.255.0.0|
 |C|255.255.255.0|
-![[Pasted image 20251226132930.png]]
+![Pasted image 20251226132930](../zzfiles/Pasted%20image%2020251226132930.png)
 
 ## Exercise
 We have an initial address of 10.0.0.0/8 `the /8 means that thers is 8bits that are part of the net ID so 8 - 32 bits usable by the host`

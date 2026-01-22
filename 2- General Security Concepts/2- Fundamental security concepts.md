@@ -60,7 +60,7 @@ Just like Zero Trust separates access control from assumptions of internal safet
 - The **Control Plane** handles **policy decisions**, access control, and coordination. It’s like the brain of the network.
 - The **Data Plane** handles **the actual flow of traffic**, forwarding packets between systems.
 
-![[Pasted image 20260114193125.png]]
+![Pasted image 20260114193125](../zzfiles/Pasted%20image%2020260114193125.png)
 
 Key components include:
 - **Policy Engine:** Makes access decisions based on defined rules and live context (e.g., SIEM alerts, user behavior, device status).

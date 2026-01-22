@@ -38,13 +38,13 @@ When scanning `UDP` ports, `Nmap` usually sends completely empty requests --
 NULL, FIN and Xmas `TCP` port scans are less commonly used than any of the others, All three are interlinked and are used primarily as they tend to be even stealthier, relatively speaking, than a SYN "stealth" scan. Beginning with NULL scans:
 
 As the name suggests, NULL scans (`-sN`) are when the TCP request is sent with no flags set at all. As per the RFC, the target host should respond with a RST if the port is closed.  
-![[Pasted image 20251229081909.png]]
+![Pasted image 20251229081909](../../zzfiles/Pasted%20image%2020251229081909.png)
 
 FIN scans (`-sF`) work in an almost identical fashion; however, instead of sending a completely empty packet, a request is sent with the FIN flag (usually used to gracefully close an active connection). Once again, Nmap expects a RST if the port is closed.
-![[Pasted image 20251229081924.png]]
+![Pasted image 20251229081924](../../zzfiles/Pasted%20image%2020251229081924.png)
 
 As with the other two scans in this class, Xmas scans (`-sX`) send a malformed TCP packet and expects a RST response for closed ports. It's referred to as an xmas scan as the flags that it sets (PSH, URG and FIN) give it the appearance of a blinking christmas tree when viewed as a packet capture in Wireshark.
-![[Pasted image 20251229081958.png]]
+![Pasted image 20251229081958](../../zzfiles/Pasted%20image%2020251229081958.png)
 
 The expected response for _open_ ports with these scans is also identical, and is very similar to that of a UDP scan. If the port is open then there is no response to the malformed packet. Unfortunately (as with open UDP ports), that is _also_ an expected behaviour if the port is protected by a firewall, so NULL, FIN and Xmas scans will only ever identify ports as being _open|filtered_, _closed_, or _filtered_. If a port is identified as filtered with one of these scans then it is usually because the target has responded with an ICMP unreachable packet.  
 

@@ -15,13 +15,13 @@ and more.
 ### Software RE
 After finishing writing a program, the developer compile it into machine readable code "binary format" meant to be executed without the thought of what is written or how it behaves, there start the job of reverse engineers they take apart the binary (see picture)
 
-![[Pasted image 20251206133639.png]]
+![Pasted image 20251206133639](files/Pasted%20image%2020251206133639.png)
 
 and use debuggers like `windbg` for windows and `gdb` for Linux and decompilers like `ghidra` (developed by the NSA), `ida` to translate the binary into assembly. 
 
 Using multiple analysis techniques like static and dynamic analysis.
 
-![[Pasted image 20251206132642.png]]
+![Pasted image 20251206132642](files/Pasted%20image%2020251206132642.png)
 
 Dynamic analysis, focuses on observing the program’s behavior while it runs. By monitoring memory usage, system calls, input and output interactions, and execution traces, reverse engineers can piece together the program’s intent and detect hidden or unexpected routines. This makes it especially useful when dealing with complex logic, obfuscation, or code that only reveals itself under certain conditions.
 
@@ -54,7 +54,7 @@ Multiple attacks exploited software vulnerabilities that caused massive global d
 https://eclypsium.com/blog/smm-callout-vulnerabilities-in-uefi/
 recently a severe **UEFI firmware** vulnerabilities (specifically four CVEs Common Vulnerabilities and Exposures found in Gigabyte/AMI motherboards) that allow malicious code to execute at the deepest layer of a computer's software stack: the System Management Mode (SMM), often referred to as Ring -2. This privileged layer, which sits below the operating system (Ring 0) and hypervisor (Ring -1), is supposed to be isolated in protected memory (SMRAM) and handles critical hardware control. The core flaw is a memory corruption vulnerability within the SMM's System Management Interrupt (SMI) handlers that lets an attacker with OS privileges send a malicious request. By exploiting a misimplementation in the handler, the attacker gains the ability to arbitrarily control memory, including writing their own payload into the protected SMRAM. The result is the installation of a persistent, extremely dangerous bootkit that bypasses Secure Boot and compromises the entire chain of trust, making it undetectable by OS-level security tools and surviving any attempt to reinstall the operating system. (even the NSA put a guide of how to get rid of it)
 
-![[Pasted image 20251206200554.png]]
+![Pasted image 20251206200554](files/Pasted%20image%2020251206200554.png)
 
 From these attacks we deduce that the vulnerability research in softwares is very important and don't have to be neglected in a society where digitalization is rising.
 # Required knowledge and certifications

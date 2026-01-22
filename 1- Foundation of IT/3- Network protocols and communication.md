@@ -60,7 +60,7 @@ netcat
 ### TCP
 **TCP** is a **connection-oriented** protocol. Before sending data, it establishes a connection using a process called the **three-way handshake**. TCP ensures that data is delivered **accurately and in order**.
 
-![[Pasted image 20251226140723.png]]
+![Pasted image 20251226140723](../zzfiles/Pasted%20image%2020251226140723.png)
 #### Key Features of TCP:
 - Reliable delivery with error checking and acknowledgment
 - Sequence numbers to ensure correct order
@@ -72,7 +72,7 @@ netcat
 ### UDP
 **UDP** is a **connectionless** protocol. It sends data without establishing a prior connection, which makes it **faster but less reliable**. There’s no acknowledgment, sequencing, or retransmission.
 
-![[Pasted image 20251226140834.png]]
+![Pasted image 20251226140834](../zzfiles/Pasted%20image%2020251226140834.png)
 #### Key Features of UDP:
 - Lightweight and fast
 - No guarantee of delivery or order
@@ -100,7 +100,7 @@ Network Address Translation, or NAT, allows multiple devices within a private ne
 
 The IPv4 addressing scheme provides a maximum of 2³² addresses (approximately 4.3 billion), which is insufficient considering the vast number of internet-connected devices. NAT addresses this limitation by allowing private IP addresses to be reused internally while relying on just one public IP address for external communication.
 
-![[Pasted image 20251226141700.png]]
+![Pasted image 20251226141700](../zzfiles/Pasted%20image%2020251226141700.png)
 #### **How NAT Works**
 
 NAT operates by translating private IP addresses into public ones (and vice versa). This process typically takes place on the network’s edge device, such as a router or firewall, which is connected to both the internal (private) and external (public) networks.

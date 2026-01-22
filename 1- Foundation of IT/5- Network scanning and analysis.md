@@ -34,7 +34,7 @@ Using basic tools like ping for network scanning is slow, noisy, and limited in 
 
 An **IP scanner** is designed to identify active hosts on a network and determine how they are interconnected. In enterprise environments, tools like **Microsoft System Center** can perform authenticated scans using protocols such as `SNMP` (Simple Network Management Protocol), offering detailed insights into each host.
 
-One of the most `powerfull` and widely used open source scanner is `nmap`. [[1- nmap]]
+One of the most `powerfull` and widely used open source scanner is `nmap`. [1- nmap](Tools/1-%20nmap.md)
 ## `netstat` and `nslookup`
 Basic service discovery can also be conducted using built-in tools available on both Windows and Linux systems. These tools help administrators detect unauthorized services, identify potential malware activity, and verify `DNS` configurations.
 ### `netstat` - network statistic
