@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "d1e08b2cf0d9eb8d",
+        "id": "b9f2ddacdc9fd14b",
         "type": "tabs",
         "children": [
           {
-            "id": "525a589d18a291ec",
+            "id": "e5c22367b3623e91",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -20,8 +20,21 @@
               "icon": "lucide-file",
               "title": "5- Cryptographic solutions"
             }
+          },
+          {
+            "id": "fab68dcf8110ba38",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Labs and projects/steganography/images.jpeg"
+              },
+              "icon": "lucide-image",
+              "title": "images"
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -53,7 +66,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "digital certific",
+                "query": "AAA",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +91,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 254.5
+    "width": 200
   },
   "right": {
     "id": "1f2b09eec00bd933",
@@ -180,10 +193,30 @@
       "bases:Create new base": false
     }
   },
-  "active": "525a589d18a291ec",
+  "active": "fab68dcf8110ba38",
   "lastOpenFiles": [
-    "2- General Security Concepts/4- Explain the importance of using appropriate cryptographic solutions.md",
+    "Labs and projects/steganography/images2.jpeg",
+    "Labs and projects/Checkpoint 2.md",
+    "Labs and projects/Checkpoint1.pdf",
+    "Labs and projects/Cryptography HTB Lab.md",
+    "Labs and projects/GOMYCODE Security+ MCQ - Ch01.pdf",
+    "Labs and projects/Reverse engineering (Software RE).md",
     "2- General Security Concepts/5- Cryptographic solutions.md",
+    "Untitled.md",
+    "Labs and projects/steganography/images.jpeg",
+    "Labs and projects/steganography",
+    "steganography/images.jpeg",
+    "steganography/images2.jpeg",
+    "steganography",
+    "2- General Security Concepts/1- Types of security controls.md",
+    "zzfiles/Pasted image 20260131230933.png",
+    "zzfiles/Pasted image 20260131230822.png",
+    "zzfiles/images 1.jpeg",
+    "zzfiles/images.jpeg",
+    "zzfiles/Pasted image 20260131225711.png",
+    "zzfiles/Pasted image 20260131225656.png",
+    "2- General Security Concepts/2- Fundamental security concepts.md",
+    "2- General Security Concepts/4- Explain the importance of using appropriate cryptographic solutions.md",
     "2- General Security Concepts/Concepts/Digital certificates and Certificate authorities.md",
     "2- General Security Concepts/notes.md",
     "2- General Security Concepts/3- Change management process.md",
@@ -194,39 +227,18 @@
     "1- Foundation of IT/Packet tracer lab/Packet tracer LAB.md",
     "1- Foundation of IT/aaainfo/Why using ICMP for ping.md",
     "1- Foundation of IT/1- Intro to operating systems and virtualization.md",
-    "Labs and projects/Cryptography HTB Lab.md",
     "Untitled.base",
-    "Labs and projects/Reverse engineering (Software RE).md",
-    "Labs and projects/Checkpoint1.pdf",
-    "2- General Security Concepts/2- Fundamental security concepts.md",
-    "2- General Security Concepts/1- Types of security controls.md",
     "2- General Security Concepts/Concepts/TACACS+.md",
     "2- General Security Concepts/Concepts/802.1x.md",
     "2- General Security Concepts/Concepts/NOTES.md",
     "2- General Security Concepts/Concepts/Splunk SIEM.md",
     "2- General Security Concepts/Concepts/Domain controler.md",
     "2- General Security Concepts/Concepts",
-    "zzfiles/Pasted image 20260114193125.png",
     "PDFs",
-    "Pasted image 20260113205054.png",
     "1- Foundation of IT/Tools/1- nmap.md",
     "2- General Security Concepts",
     "1- Foundation of IT/Tools/2- Metasploit.md",
-    "1- Foundation of IT/6- Web apps.md",
-    "1- Foundation of IT/2- Networking Basics.md",
-    "zzfiles/Pasted image 20251229081958.png",
-    "zzfiles/Pasted image 20251229081924.png",
-    "zzfiles/Pasted image 20251229081909.png",
     "1- Foundation of IT/aaainfo",
-    "1- Foundation of IT/Note.md",
-    "1- Foundation of IT/Tools",
-    "zzfiles/lab1.pkt",
-    "1- Foundation of IT/Packet tracer lab/lab1.pkt",
-    "1- Foundation of IT/Packet tracer lab",
-    "zzfiles/Pasted image 20251226141700.png",
-    "zzfiles/Pasted image 20251226140834.png",
-    "zzfiles/Pasted image 20251226140723.png",
-    "zzfiles/Pasted image 20251226132930.png",
-    "zzfiles/Pasted image 20251226132020.png"
+    "1- Foundation of IT/Tools"
   ]
 }

@@ -63,3 +63,50 @@ Key stretching transforms a short, possibly weak password into a **stronger cryp
 - **Bcrypt**  
     Specifically built for password hashing. It adds salting and automatically increases its workload over time (configurable with a "cost" factor).
 # Digital signatures
+In the digital world, just like signing a paper contract proves authorship and agreement, **digital signatures** serve as the **electronic equivalent** of a handwritten signature. But rather than using ink, they use **cryptography** to ensure:
+
+- **Integrity** — the data wasn’t altered
+- **Authentication** — the sender is who they claim to be
+- **Non-repudiation** — the sender can’t later deny sending the message
+
+A digital signature combines **hashing** and **asymmetric encryption**. Here’s a simplified step-by-step process using RSA:
+
+1. **Hashing the message**:  
+    The sender (Alice) runs a **hash function** (e.g., SHA-256) on the message to generate a **digest**.  
+    
+2. **Encrypting the digest**:  
+    Alice **encrypts the digest** using her **private key**. This encrypted hash becomes the **digital signature**.  
+    
+3. **Attaching the signature**:  
+    Alice sends both the **original message** and the **digital signature** to the recipient (Bob).  
+    
+4. **Verification**:
+    - Bob uses Alice’s **public key** to **decrypt** the signature and recover the hash.
+    - He also hashes the original message himself using the same algorithm.
+    - If the two digests match, the message is **authentic** and **unaltered**.
+
+Key Points :
+
+- **The message itself is not encrypted** — it passes in cleartext.  
+- The **private key signs** (encrypts the hash), and the **public key verifies**.  
+- If someone tampers with the message, the hash won’t match.  
+- This process ensures that only Alice (the private key holder) could have created the signature.
+
+|   |   |
+|---|---|
+|**Feature**|**Description**|
+|**Integrity**|Confirms that the data has not been modified during transmission|
+|**Authentication**|Confirms the identity of the sender (via their private key)|
+|**Non-repudiation**|Prevents the sender from denying they sent the message|
+
+|   |   |
+|---|---|
+|**Algorithm**|**Notes**|
+|**RSA**|Uses the sender’s private key to sign a hash of the message|
+|**DSA** (Digital Signature Algorithm)|Based on **Elliptic Curve Cryptography (ECC)**; widely used in modern secure systems (e.g., SSH, TLS)|
+
+To prevent forgery or impersonation, the recipient must **validate** that the public key actually belongs to the sender — usually done using a **digital certificate**, which we’ll cover next.
+# Digital certificate
+
+# Note
+digital signature are made to verify that the sender is legitimate, and certificate that the receiver is legitimate.
