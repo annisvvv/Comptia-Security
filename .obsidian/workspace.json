@@ -20,21 +20,8 @@
               "icon": "lucide-file",
               "title": "5- Cryptographic solutions"
             }
-          },
-          {
-            "id": "fab68dcf8110ba38",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Labs and projects/steganography/images.jpeg"
-              },
-              "icon": "lucide-image",
-              "title": "images"
-            }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -193,8 +180,9 @@
       "bases:Create new base": false
     }
   },
-  "active": "fab68dcf8110ba38",
+  "active": "e5c22367b3623e91",
   "lastOpenFiles": [
+    "Labs and projects/steganography/images.jpeg",
     "Labs and projects/steganography/images2.jpeg",
     "Labs and projects/Checkpoint 2.md",
     "Labs and projects/Checkpoint1.pdf",
@@ -203,7 +191,6 @@
     "Labs and projects/Reverse engineering (Software RE).md",
     "2- General Security Concepts/5- Cryptographic solutions.md",
     "Untitled.md",
-    "Labs and projects/steganography/images.jpeg",
     "Labs and projects/steganography",
     "steganography/images.jpeg",
     "steganography/images2.jpeg",
